@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import InOutSelect from './components/InOutSelect/InOutSelect';
+import In from './components/InOut/In';
 
 import './App.css';
 
@@ -10,6 +11,11 @@ const App = () => {
   console.log(page === "inOutSelect");
   if (page === "inOutSelect") {
     body = <InOutSelect
+      setPage = { (x) => setPage(x) }
+    />
+  }
+  else if (page === "in") {
+    body = <In
       setPage = { (x) => setPage(x) }
     />
   }

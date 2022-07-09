@@ -2,9 +2,9 @@ const PLayout = (props) => {
   return (
     <div
       style={{
-        padding: '20px',
-        width: 'calc(100% - 40px)',
-        height: 'calc(100% - 40px)',
+        padding: '30px',
+        width: 'calc(100% - 60px)',
+        height: 'calc(100% - 60px)',
       }}
     >
       <div style={{
