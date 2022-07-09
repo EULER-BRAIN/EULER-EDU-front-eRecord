@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import InOutSelect from './components/InOutSelect/InOutSelect';
 import In from './components/InOut/In';
+import Out from './components/InOut/Out';
 
 import './App.css';
 
@@ -16,6 +17,11 @@ const App = () => {
   }
   else if (page === "in") {
     body = <In
+      setPage = { (x) => setPage(x) }
+    />
+  }
+  else if (page === "out") {
+    body = <Out
       setPage = { (x) => setPage(x) }
     />
   }

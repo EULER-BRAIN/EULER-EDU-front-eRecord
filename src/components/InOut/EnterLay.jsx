@@ -4,12 +4,15 @@ import PLayout from "../Layout/PLayout"
 
 const LeftLay = (props) => {
   const styleText = {
-    fontSize: '25px', 
+    fontSize: '30px', 
     textAlign: 'center',
     color: 'rgb(120,120,120)'
   }
   return (
-    <div>
+    <div style={{
+      width: '100%',
+      height: '100%'
+    }}>
       <div
         style={{
           fontSize: '30px',
@@ -20,12 +23,26 @@ const LeftLay = (props) => {
       >
         { props.title }
       </div>
-      <div
-        style={ styleText }
-        className="FBold"
-      >
-        { props.number }
-      </div>
+      <div style={{ height: 'calc(50% - 120px)' }} />
+      {
+        props.number === "" ? (
+          <div
+            style={{
+              ...styleText,
+              color: 'rgb(200,200,200)'
+            }}
+            className="FBold"
+          >번호를 입력하세요</div>
+
+        ) : (
+          <div
+            style={ styleText }
+            className="FBold"
+          >
+            { props.number }
+          </div>
+        )
+      }
     </div>
   )
 }
@@ -46,7 +63,7 @@ const BtnNumer = (props) => {
     height: '24px',
     lineHeight: '24px',
     textAlign: 'center',
-    fontSize: '20px'
+    fontSize: '24px'
   }
   return (
     <animated.div
@@ -65,6 +82,25 @@ const BtnNumer = (props) => {
 }
 BtnNumer.defaultProps = {
   onClick: () => {}
+}
+
+const BtnRightBtm = (props) => {
+  const style = useSpring({
+    position: 'relative',
+    width: '100%',
+    background: `rgba(48,101,172,0.5)`,
+    border: '1px solid rgb(200,200,200)',
+    borderRadius: '10px'
+  })
+
+  return (
+    <animated.div
+      style={ style }
+      className="BTNC"
+    >
+
+    </animated.div>
+  )
 }
 
 const RightLay = (props) => {
@@ -133,6 +169,10 @@ const RightLay = (props) => {
           </div>
         )
       }
+      <div style={{ height: '10px' }}/>
+      <div style={ styleLine }>
+        <BtnRightBtm s/>
+      </div>
     </div>
   )
 }
