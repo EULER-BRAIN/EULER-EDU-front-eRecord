@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/EULER-EDU-front-eRecord/static/css/main.b72f9e2c.css",
-    "main.js": "/EULER-EDU-front-eRecord/static/js/main.b0292b12.js",
+    "main.js": "/EULER-EDU-front-eRecord/static/js/main.077ff913.js",
     "index.html": "/EULER-EDU-front-eRecord/index.html",
     "main.b72f9e2c.css.map": "/EULER-EDU-front-eRecord/static/css/main.b72f9e2c.css.map",
-    "main.b0292b12.js.map": "/EULER-EDU-front-eRecord/static/js/main.b0292b12.js.map"
+    "main.077ff913.js.map": "/EULER-EDU-front-eRecord/static/js/main.077ff913.js.map"
   },
   "entrypoints": [
     "static/css/main.b72f9e2c.css",
-    "static/js/main.b0292b12.js"
+    "static/js/main.077ff913.js"
   ]
 }
