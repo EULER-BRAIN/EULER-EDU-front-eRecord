@@ -1,9 +1,25 @@
+import { useState } from 'react';
+import InOutSelect from './components/InOutSelect/InOutSelect';
+
 import './App.css';
 
-function App() {
+const App = () => {
+  const [page, setPage] = useState("inOutSelect");
+  let body = null;
+  
+  console.log(page === "inOutSelect");
+  if (page === "inOutSelect") {
+    body = <InOutSelect
+      setPage = { (x) => setPage(x) }
+    />
+  }
+
   return (
-    <div>
-      EULER
+    <div style={{
+      width: '100%',
+      height: '100%'
+    }}>
+      { body }
     </div>
   );
 }

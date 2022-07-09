@@ -6,4 +6,4 @@ See [contributors](https://github.com/EULER-BRAIN/EULER-EDU-front/graphs/contrib
 ## Accompanying Project
  - frontend : https://github.com/EULER-BRAIN/EULER-EDU-front
  - backend : https://github.com/EULER-BRAIN/EULER-EDU-back
- - eRecord : 
+ - eRecord : https://github.com/EULER-BRAIN/EULER-EDU-front-eRecord
