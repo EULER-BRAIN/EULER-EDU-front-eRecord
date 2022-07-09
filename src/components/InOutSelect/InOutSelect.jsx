@@ -19,7 +19,8 @@ const BtnSelect = (props) => {
       <div
         style={{
           textAlign: 'center',
-          color: 'white'
+          color: 'white',
+          fontSize: '20px'
         }}
       >{ props.text }</div>
     </div>

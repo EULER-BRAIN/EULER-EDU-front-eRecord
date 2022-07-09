@@ -3,19 +3,27 @@ import { useSpring, animated } from 'react-spring'
 import PLayout from "../Layout/PLayout"
 
 const LeftLay = (props) => {
+  const styleText = {
+    fontSize: '25px', 
+    textAlign: 'center',
+    color: 'rgb(120,120,120)'
+  }
   return (
     <div>
       <div
         style={{
-          fontSize: '20px',
-          height: '23px',
-          lineHeight: '23px'
+          fontSize: '30px',
+          height: '35px',
+          lineHeight: '35px'
         }}
         className="FBold"
       >
         { props.title }
       </div>
-      <div>
+      <div
+        style={ styleText }
+        className="FBold"
+      >
         { props.number }
       </div>
     </div>
@@ -24,13 +32,21 @@ const LeftLay = (props) => {
 
 const BtnNumer = (props) => {
   const style = useSpring({
+    position: 'relative',
     width: 'calc(calc(100% - 10px) / 3)',
     background: `rgba(120,120,120,0.1)`,
     border: '1px solid rgb(200,200,200)',
     borderRadius: '10px'
   })
   const styleText = {
-    textAlign: 'center'
+    position: 'absolute',
+    top: 'calc(50% - 12px)',
+    left: '0px',
+    width: '100%',
+    height: '24px',
+    lineHeight: '24px',
+    textAlign: 'center',
+    fontSize: '20px'
   }
   return (
     <animated.div
@@ -40,6 +56,7 @@ const BtnNumer = (props) => {
     >
       <div
         style={ styleText }
+        className="FRegular"
       >
         { props.children }
       </div>
@@ -59,6 +76,10 @@ const RightLay = (props) => {
 
   const addNumFunc = (x) => {
     return () => props.setNumber(props.number + x);
+  }
+  const onDelete = () => {
+    const len = props.number.length;
+    props.setNumber(props.number.slice(0, len - 1));
   }
 
   return (
@@ -95,6 +116,7 @@ const RightLay = (props) => {
               onClick={ addNumFunc(0) }
             >0</BtnNumer>
             <BtnNumer
+              onClick={ props.onClose }
             >취소</BtnNumer>
           </div>
         ) : (
@@ -106,7 +128,7 @@ const RightLay = (props) => {
               onClick={ addNumFunc(0) }
             >0</BtnNumer>
             <BtnNumer
-              onClick={ () => props.setNumber(props.number) }
+              onClick={ onDelete }
             >지우기</BtnNumer>
           </div>
         )
@@ -147,6 +169,7 @@ const EnterLay = (props) => {
         <RightLay
           number={ number }
           setNumber={ numberHandler }
+          onClose={ props.onClose }
         />
       </div>
     </PLayout>
